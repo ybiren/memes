@@ -46,43 +46,41 @@ Backend will run at:
 
 http://localhost:3000
 
-
-
 4) Seed the Meme Data (Required!)
 
-Before using the frontend, you must load meme data into MongoDB.
-
-Run this command in PowerShell:
+Before using the frontend, load memes into MongoDB:
 
 Invoke-RestMethod -Method Post http://localhost:3000/memes/seed
 
 
-Expected response example:
+Expected output:
 
 {"insertedOrUpdated": 100}
 
 
-If you see a number — ✅ Data is loaded.
+If you see a number — ✅ Database is ready.
 
-5) Start the Frontend (Next.js App)
+5) Start the Frontend (Next.js UI)
 cd frontend/memes-web
 npm install
 npm run dev
 
-Open the app:
+
+Open the UI:
+
 http://localhost:3001
 
+6) Environment Setup
 
-### Environment Setup
-Copy `.env.example` to `.env` and fill in your values:
+Copy .env.example files and fill your values:
 
-**Backend**
-```bash
+Backend
+
 cd backend/memes-api
 cp .env.example .env
 
-**Frontend**
-bash
-Copy code
+
+Frontend
+
 cd frontend/memes-web
 cp .env.example .env.local
