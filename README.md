@@ -23,64 +23,92 @@ From the project root, run:
 
 ```powershell
 docker compose up -d
+```
 
 This will start:
 
-Service	Port	Purpose
-MongoDB	27017	Database
-Mongo Express UI (optional)	8081	Web UI to browse DB
+| Service | Port | Purpose |
+|--------|------|---------|
+| MongoDB | 27017 | Database |
+| Mongo Express UI (optional) | 8081 | Web UI to browse DB |
 
-To verify:
+Verify:
 
+```powershell
 docker ps
+```
 
 ---
 
 ## 3) Start the Backend (API)
+
+```powershell
 cd backend/memes-api
 npm install
 npm run start:dev
+```
 
+Backend runs at:
 
-Backend will run at:
-
+```
 http://localhost:3000
+```
 
-4) Seed the Meme Data (Required!)
+---
+
+## 4) Seed the Meme Data (Required!)
 
 Before using the frontend, load memes into MongoDB:
 
+```powershell
 Invoke-RestMethod -Method Post http://localhost:3000/memes/seed
-
+```
 
 Expected output:
 
+```json
 {"insertedOrUpdated": 100}
-
+```
 
 If you see a number — ✅ Database is ready.
 
-5) Start the Frontend (Next.js UI)
+---
+
+## 5) Start the Frontend (Next.js UI)
+
+```powershell
 cd frontend/memes-web
 npm install
 npm run dev
+```
 
+Open the app in your browser:
 
-Open the UI:
-
+```
 http://localhost:3001
+```
 
-6) Environment Setup
+---
 
-Copy .env.example files and fill your values:
+## 6) Environment Setup
 
-Backend
+Copy `.env.example` files and fill in your values.
 
+### Backend
+```powershell
 cd backend/memes-api
 cp .env.example .env
+```
 
-
-Frontend
-
+### Frontend
+```powershell
 cd frontend/memes-web
 cp .env.example .env.local
+```
+
+---
+
+## ✅ Done
+
+Your Meme App is now running.  
+Scroll to load more memes and click **"עריכה"** to rename.
