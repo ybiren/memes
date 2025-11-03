@@ -34,9 +34,9 @@ To verify:
 
 docker ps
 
+---
 
-
-3) Start the Backend (API)
+## 3) Start the Backend (API)
 cd backend/memes-api
 npm install
 npm run start:dev
