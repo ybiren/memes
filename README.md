@@ -103,7 +103,7 @@ cp .env.example .env
 ### Frontend
 ```powershell
 cd frontend/memes-web
-cp .env.example .env.local
+cp .env.example.local .env.local
 ```
 
 ---
